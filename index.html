@@ -744,6 +744,9 @@ a{color:var(--accent);text-underline-offset:.18em}
   // Each check carries: the designation, the check itself, why it matters, a concrete way to
   // test it in the next two minutes, and the reference so it can be looked up and defended.
   // Basic access cites the WCAG success criterion; UDL cites the CAST 3.0 consideration.
+  // Six basic access checks, one per WCAG success criterion, then three under each UDL
+  // pillar so no pillar reads as an afterthought. Each carries a concrete test and its
+  // source, so an item can be looked up or pointed to.
   var AUDIT = [
     ["basic","Headings are real heading styles, not just bold text",
       "A screen reader builds its map of the document from headings. Bold text is invisible to it.",
@@ -769,35 +772,42 @@ a{color:var(--accent);text-underline-offset:.18em}
       "Light gray on white is the single most common failure in slide decks, including handsome ones.",
       "Run the two colors through the free WebAIM contrast checker. Body text needs 4.5 to 1.",
       "WCAG 1.4.3"],
-    ["rep","Information reaches students in more than one way",
-      "If it exists only as speech, anyone who could not hear it that day has nothing.",
-      "Pick your most important concept. Ask what a student would have if they could not hear it, or could not see it.",
-      "CAST 1.2, 2.5"],
-    ["act","There is more than one way to demonstrate this learning",
-      "If only one format is accepted, you may be assessing the format rather than the outcome.",
-      "List every assessment in the course. If they are all the same shape, ask whether the shape is the outcome.",
-      "CAST 5.1, 5.2"],
-    ["eng","Expectations are written down, not just said aloud",
-      "Said once in week two, an expectation exists only for the people who were there and taking notes.",
-      "Open the assignment as a student. Is the standard visible before they start, or only in the grade afterward?",
-      "CAST 8.1"],
+
     ["eng","There is a real choice somewhere in this course",
       "Choice is the cheapest form of engagement and usually the first thing cut. It costs you nothing to let a student pick the topic.",
       "Name one place a student chooses something that matters: the topic, the format, the order, or the due date. If you cannot name one, that is the finding.",
       "CAST 7.1"],
-    ["eng","A student can see why this is worth their time",
-      "Relevance is obvious to you because you chose the field. It is not obvious to someone taking the course because it was required.",
-      "Read your first paragraph of the unit as a student who is only here because it is required. Does it answer why this matters?",
-      "CAST 7.2"],
+    ["eng","Expectations are written down, not just said aloud",
+      "Said once in week two, an expectation exists only for the people who were there and taking notes.",
+      "Open the assignment as a student. Is the standard visible before they start, or only in the grade afterward?",
+      "CAST 8.1"],
     ["eng","Feedback arrives in time to be used",
       "Feedback that lands after the next thing is due is not feedback, it is a grade with commentary attached.",
       "Compare your usual turnaround with the gap between assignments. If feedback arrives after the next submission, nothing can act on it.",
       "CAST 8.5"],
-    ["eng","A student who knows nobody has a way in",
-      "Belonging is designed or left to luck, and the students who most need it are least able to manufacture it.",
-      "Look at your first two weeks. Is there a structured moment where students have to interact, or does it depend on who is confident enough to speak?",
-      "CAST 8.4"],
-    ["all","A student could get this material without asking anyone for help",
+
+    ["rep","Information reaches students in more than one way",
+      "If it exists only as speech, anyone who could not hear it that day has nothing.",
+      "Pick your most important concept. Ask what a student would have if they could not hear it, or could not see it.",
+      "CAST 1.2, 2.5"],
+    ["rep","The vocabulary of the discipline is explained, not assumed",
+      "Every field has words that sound like ordinary English and are not. Students rarely admit which ones they are guessing at.",
+      "Read one page as someone outside your field. Circle every term you would have to look up, then count how many you define anywhere.",
+      "CAST 2.1"],
+    ["rep","New material is tied to something students already know",
+      "Prior knowledge is uneven, and the students with least of it are the ones least likely to say so.",
+      "Look at how a new unit opens. Does it start from what came before, or does it assume the prerequisite stuck?",
+      "CAST 3.1"],
+
+    ["act","There is more than one way to demonstrate this learning",
+      "If only one format is accepted, you may be assessing the format rather than the outcome.",
+      "List every assessment in the course. If they are all the same shape, ask whether the shape is the outcome.",
+      "CAST 5.1, 5.2"],
+    ["act","Students can see how they are doing before the grade arrives",
+      "Without a way to check, a student cannot tell effort from progress until it is too late to change either.",
+      "Ask how a student would know they are on track in week five. If the honest answer is the midterm, that is the gap.",
+      "CAST 6.4"],
+    ["act","A student could get this material without asking anyone for help",
       "If it takes a request, it is an accommodation, not a design. Requests cost students something to make.",
       "Trace the path from the course page to the material. Does any step require emailing you first?",
       "CAST 4.2"]
@@ -816,9 +826,8 @@ a{color:var(--accent);text-underline-offset:.18em}
       eng:   ["UDL &middot; Engagement", "Why a student would care. The pillar most often skipped."],
       rep:   ["UDL &middot; Representation", "How the content reaches them."],
       act:   ["UDL &middot; Action &amp; expression", "How they show you."],
-      all:   ["UDL &middot; the whole point", "Designed in, so nobody has to ask."]
     };
-    var order = ["basic","eng","rep","act","all"], n = 0;
+    var order = ["basic","eng","rep","act"], n = 0;
     order.forEach(function(kind){
       var rows = AUDIT.filter(function(r){ return r[0] === kind; });
       if (!rows.length) return;
