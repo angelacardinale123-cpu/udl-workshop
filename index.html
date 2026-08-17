@@ -155,6 +155,15 @@ body{margin:0;background:var(--paper);color:var(--ink);
   letter-spacing:.06em;color:var(--muted);border:1px solid var(--rule-strong);
   border-radius:5px;padding:.1em .45em}
 
+.check-head{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin:1.15rem 0 .1rem;
+  padding-top:.9rem;border-top:2px solid var(--rule-strong)}
+.check-head:first-child{margin-top:.2rem;padding-top:0;border-top:0}
+.check-head-note{font-size:14px;color:var(--muted)}
+.check label:first-of-type{border-top:1px solid var(--rule)}
+
+.closers{display:grid;gap:.45rem;margin:0 0 1.3rem}
+.closers p{margin:0;font-size:clamp(15px,1.7vw,17.5px);line-height:1.45;color:var(--ink);max-width:60ch}
+
 .skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--accent-ink);
       padding:.7rem 1rem;border-radius:0 0 8px 0;z-index:100;font-weight:700}
 .skip:focus{left:0}
@@ -547,9 +556,8 @@ a{color:var(--accent);text-underline-offset:.18em}
       <p class="eyebrow">Hands on &middot; about 12 minutes</p>
       <h2>Audit one real thing</h2>
       <p class="sub" style="margin-bottom:.55rem">Open one artifact from your own course: a syllabus, a slide deck, a video, or an assignment. Work through this against that one thing. Your answers stay on your device.</p>
-      <p class="legend"><span class="tag t-basic">Basic access</span> required by law, usually a one-time fix.
-        <span class="tag t-rep" style="margin-left:.5rem">UDL</span> a design choice that means fewer people have to ask.<br>
-        <span style="font-size:13.5px">Each item cites its source: a WCAG success criterion, or a CAST Guidelines 3.0 consideration, so you can look it up or point to it.</span></p>
+      <p class="legend"><strong>Work down the list.</strong> Clear the basic access items first: they are required, and most take minutes. The UDL items underneath are design decisions, and one of them is worth more than all the rest ticked in a hurry.<br>
+        <span style="font-size:13.5px">Each item cites its source, a WCAG success criterion or a CAST Guidelines 3.0 consideration, so you can look it up or point to it.</span></p>
       <div class="check" id="auditList"></div>
       <p class="tally" id="tally" role="status" aria-live="polite">Nothing ticked yet. Every unticked box is a change you could make.</p>
     </div>
@@ -603,7 +611,7 @@ a{color:var(--accent);text-underline-offset:.18em}
         <p class="hint" style="margin:.5rem 0 0">Nothing here is saved or sent anywhere. It is yours.</p>
       </div>
 
-      <p style="margin-top:1.2rem;font-size:17px"><strong>Help is free and there is no judgement.</strong> Bring the messy version, an old scanned PDF or a syllabus you inherited, to <a href="mailto:acardinale@barstow.edu">acardinale@barstow.edu</a>.</p>
+      <p style="margin-top:1.2rem;font-size:17px"><strong>Help is free.</strong> If you want a second pair of eyes on any of this, email <a href="mailto:acardinale@barstow.edu">acardinale@barstow.edu</a>.</p>
     </div>
   </section>
 
@@ -629,17 +637,23 @@ a{color:var(--accent);text-underline-offset:.18em}
   </section>
 
   <!-- 20 -->
-  <section class="slide" data-notes="Leave this up while people pack up and talk. Say the email out loud once. If someone photographs one slide today, it should be this one.">
+  <section class="slide" data-notes="Leave this up while people pack up. Say the email out loud once. The four options are there so nobody leaves thinking this was only about captions: pick whichever line is true for their course.">
     <div class="slide-inner">
       <p class="eyebrow">Thank you</p>
       <h2 style="font-size:clamp(28px,5vw,50px)">Take one thing and change it</h2>
-      <p class="lead" style="margin-bottom:1.4rem">You do not have to redesign a course. Fix the captions on one video, or put real headings in one document, and the next student who needs it will simply find it working.</p>
+      <p class="lead" style="margin-bottom:1.2rem">You do not have to redesign a course. Change one thing, and let it be the one that matters in your context.</p>
+      <div class="closers">
+        <p><span class="tag t-basic">Basic access</span>Captions on one video. Real headings in one document. Required, and usually done in an afternoon.</p>
+        <p><span class="tag t-eng">Engagement</span>One genuine choice. Feedback that arrives while it can still be used.</p>
+        <p><span class="tag t-rep">Representation</span>One concept a student can reach two ways, not only by being in the room.</p>
+        <p><span class="tag t-act">Action &amp; expression</span>One assignment where the format is not the outcome.</p>
+      </div>
       <div class="thanks">
         <div>
           <h3 style="font-size:clamp(18px,2.2vw,22px)">Angela Cardinale</h3>
           <p class="sub" style="margin:.15rem 0 .7rem;font-size:17px">Associate Dean of Library and Learning Support</p>
           <p style="margin:0 0 1rem"><a href="mailto:acardinale@barstow.edu">acardinale@barstow.edu</a></p>
-          <p style="font-size:16px;margin:0"><strong>Bring us the messy version.</strong> An old scanned PDF, a video with no captions, a syllabus you inherited. That is the useful one, and there is no charge and no judgement.</p>
+          <p style="font-size:16px;margin:0">Happy to look at anything with you: a document, a video, an assignment, or a question you are not sure how to phrase.</p>
         </div>
         <div class="qrbox">
           <svg role="img" aria-label="QR code linking to these workshop slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" width="100%" height="100%" class="qr segno"><path class="qrline" stroke="#002269" d="M2 2.5h7m1 0h1m2 0h1m1 0h4m2 0h1m2 0h6m2 0h2m2 0h7m-41 1h1m5 0h1m1 0h4m1 0h1m3 0h2m2 0h9m4 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m4 0h1m1 0h2m2 0h4m1 0h4m3 0h4m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m3 0h4m1 0h2m1 0h1m1 0h7m3 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h3m1 0h1m1 0h2m1 0h6m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h2m2 0h2m1 0h1m2 0h2m1 0h2m2 0h4m2 0h1m2 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-31 1h3m2 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h3m1 0h1m-30 1h1m2 0h1m2 0h3m4 0h2m2 0h5m1 0h1m1 0h1m6 0h3m1 0h2m-38 1h1m3 0h3m2 0h2m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m2 0h3m2 0h2m1 0h1m-41 1h4m2 0h1m1 0h1m3 0h1m1 0h2m1 0h2m1 0h2m8 0h2m2 0h1m1 0h4m-38 1h1m1 0h1m2 0h1m2 0h2m1 0h3m6 0h3m2 0h2m1 0h1m3 0h2m2 0h1m-39 1h1m5 0h1m2 0h1m1 0h2m2 0h3m8 0h2m1 0h3m1 0h2m2 0h1m1 0h1m-37 1h2m2 0h1m3 0h1m3 0h1m3 0h1m2 0h1m1 0h2m1 0h2m1 0h3m6 0h1m-40 1h3m1 0h3m1 0h1m2 0h2m2 0h7m1 0h4m2 0h2m1 0h1m1 0h1m1 0h2m2 0h1m-41 1h2m2 0h2m4 0h1m2 0h3m2 0h2m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h3m-37 1h8m3 0h1m2 0h1m1 0h2m2 0h3m3 0h1m2 0h1m2 0h1m2 0h1m3 0h1m-40 1h1m3 0h2m1 0h5m1 0h1m1 0h3m3 0h2m1 0h1m3 0h2m2 0h1m1 0h2m3 0h2m-41 1h5m1 0h1m2 0h2m1 0h5m2 0h3m1 0h1m2 0h1m2 0h1m2 0h2m2 0h1m2 0h2m-40 1h2m2 0h1m1 0h1m4 0h3m1 0h1m1 0h1m3 0h1m2 0h3m1 0h3m1 0h1m1 0h1m1 0h1m-38 1h1m3 0h3m4 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1m3 0h3m2 0h3m2 0h1m1 0h1m-41 1h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m4 0h1m2 0h1m2 0h1m2 0h1m1 0h1m3 0h3m4 0h2m-41 1h4m1 0h2m1 0h1m7 0h1m1 0h1m1 0h3m1 0h1m3 0h2m1 0h2m1 0h1m4 0h1m-39 1h2m2 0h1m1 0h1m4 0h2m1 0h1m2 0h3m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m4 0h3m-41 1h2m3 0h3m2 0h1m3 0h2m1 0h1m1 0h1m3 0h2m1 0h4m1 0h5m3 0h2m-41 1h2m1 0h3m1 0h1m1 0h3m1 0h1m4 0h2m3 0h3m3 0h1m1 0h1m5 0h1m1 0h1m-39 1h2m3 0h1m7 0h1m1 0h1m8 0h1m4 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-41 1h3m1 0h1m2 0h1m1 0h1m1 0h3m6 0h1m2 0h2m1 0h4m2 0h1m1 0h3m2 0h1m-39 1h1m2 0h3m1 0h1m1 0h1m1 0h2m1 0h1m2 0h3m1 0h1m1 0h1m1 0h1m2 0h2m1 0h2m5 0h2m-39 1h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m1 0h2m3 0h2m2 0h5m2 0h3m1 0h2m1 0h1m-41 1h1m1 0h1m3 0h1m5 0h4m3 0h1m4 0h1m2 0h3m2 0h1m3 0h1m2 0h2m-38 1h3m4 0h3m2 0h1m5 0h3m1 0h2m2 0h2m2 0h1m3 0h1m1 0h2m-41 1h1m3 0h1m1 0h2m5 0h2m1 0h4m1 0h2m1 0h1m2 0h1m2 0h7m1 0h1m1 0h1m-33 1h2m1 0h2m1 0h1m1 0h2m7 0h2m1 0h2m1 0h2m3 0h1m2 0h2m-41 1h7m4 0h5m2 0h1m2 0h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m-40 1h1m5 0h1m3 0h2m2 0h1m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1m3 0h1m3 0h1m1 0h1m-39 1h1m1 0h3m1 0h1m4 0h2m2 0h2m1 0h1m1 0h1m5 0h3m1 0h1m1 0h5m3 0h1m-41 1h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h3m1 0h2m2 0h1m5 0h2m1 0h1m1 0h2m1 0h3m-39 1h1m1 0h3m1 0h1m2 0h1m1 0h1m2 0h2m1 0h3m5 0h1m5 0h1m4 0h3m1 0h1m-41 1h1m5 0h1m8 0h2m4 0h2m1 0h1m4 0h5m1 0h1m3 0h1m-40 1h7m4 0h1m1 0h4m5 0h1m2 0h1m3 0h1m2 0h2m1 0h2m2 0h1"/></svg>
@@ -767,6 +781,22 @@ a{color:var(--accent);text-underline-offset:.18em}
       "Said once in week two, an expectation exists only for the people who were there and taking notes.",
       "Open the assignment as a student. Is the standard visible before they start, or only in the grade afterward?",
       "CAST 8.1"],
+    ["eng","There is a real choice somewhere in this course",
+      "Choice is the cheapest form of engagement and usually the first thing cut. It costs you nothing to let a student pick the topic.",
+      "Name one place a student chooses something that matters: the topic, the format, the order, or the due date. If you cannot name one, that is the finding.",
+      "CAST 7.1"],
+    ["eng","A student can see why this is worth their time",
+      "Relevance is obvious to you because you chose the field. It is not obvious to someone taking the course because it was required.",
+      "Read your first paragraph of the unit as a student who is only here because it is required. Does it answer why this matters?",
+      "CAST 7.2"],
+    ["eng","Feedback arrives in time to be used",
+      "Feedback that lands after the next thing is due is not feedback, it is a grade with commentary attached.",
+      "Compare your usual turnaround with the gap between assignments. If feedback arrives after the next submission, nothing can act on it.",
+      "CAST 8.5"],
+    ["eng","A student who knows nobody has a way in",
+      "Belonging is designed or left to luck, and the students who most need it are least able to manufacture it.",
+      "Look at your first two weeks. Is there a structured moment where students have to interact, or does it depend on who is confident enough to speak?",
+      "CAST 8.4"],
     ["all","A student could get this material without asking anyone for help",
       "If it takes a request, it is an accommodation, not a design. Requests cost students something to make.",
       "Trace the path from the course page to the material. Does any step require emailing you first?",
@@ -781,19 +811,36 @@ a{color:var(--accent);text-underline-offset:.18em}
   };
   function buildAudit(){
     var wrap = document.getElementById("auditList"), h = "";
-    AUDIT.forEach(function(row, n){
-      var t = TAG[row[0]];
-      h += '<label for="a'+n+'"><input type="checkbox" id="a'+n+'" data-audit data-kind="'+row[0]+'">' +
-           '<span><span class="tag '+t[1]+'">'+t[0]+'</span>' + row[1] +
-           '<span class="why">' + row[2] + '</span>' +
-           '<span class="howto"><span class="howlab">Check it</span>' + row[3] + '</span>' +
-           '<span class="ref">' + row[4] + '</span>' +
-           '</span></label>';
+    var HEAD = {
+      basic: ["Basic access", "The legal floor. Mostly one-time technical fixes, and quick."],
+      eng:   ["UDL &middot; Engagement", "Why a student would care. The pillar most often skipped."],
+      rep:   ["UDL &middot; Representation", "How the content reaches them."],
+      act:   ["UDL &middot; Action &amp; expression", "How they show you."],
+      all:   ["UDL &middot; the whole point", "Designed in, so nobody has to ask."]
+    };
+    var order = ["basic","eng","rep","act","all"], n = 0;
+    order.forEach(function(kind){
+      var rows = AUDIT.filter(function(r){ return r[0] === kind; });
+      if (!rows.length) return;
+      var hd = HEAD[kind];
+      h += '<p class="check-head"><span class="tag '+TAG[kind][1]+'">'+hd[0]+'</span>' +
+           '<span class="check-head-note">'+hd[1]+'</span></p>';
+      rows.forEach(function(row){
+        var t = TAG[row[0]];
+        h += '<label for="a'+n+'"><input type="checkbox" id="a'+n+'" data-audit data-kind="'+row[0]+'">' +
+             '<span>' + row[1] +
+             '<span class="why">' + row[2] + '</span>' +
+             '<span class="howto"><span class="howlab">Check it</span>' + row[3] + '</span>' +
+             '<span class="ref">' + row[4] + '</span>' +
+             '</span></label>';
+        n++;
+      });
     });
     wrap.innerHTML = h;
     wrap.addEventListener("change", tally);
     tally();
   }
+
   function tally(){
     var boxes = document.querySelectorAll("[data-audit]");
     var doneB = 0, totB = 0, doneU = 0, totU = 0;
