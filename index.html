@@ -453,6 +453,8 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,[t
    can never come to rest underneath it. */
 html{scroll-padding-bottom:88px}
 a,button,input,select,textarea,summary,[tabindex]{scroll-margin-bottom:88px}
+
+:root{--fence-glass:rgba(126,178,196,.34); --fence-glass-line:rgba(26,26,34,.22)}
 </style>
 
 <a class="skip" href="#main">Skip to the slides</a>
@@ -723,7 +725,7 @@ a,button,input,select,textarea,summary,[tabindex]{scroll-margin-bottom:88px}
             <label for="cWhen">When</label>
             <select id="cWhen">
               <option>before my next class</option>
-              <option>by Friday</option>
+              <option>by tomorrow</option>
               <option>before the term starts</option>
               <option>this week</option>
             </select>
@@ -800,8 +802,8 @@ a,button,input,select,textarea,summary,[tabindex]{scroll-margin-bottom:88px}
         <div>
           <h3 style="font-size:clamp(18px,2.2vw,22px)">Angela Cardinale</h3>
           <p class="sub" style="margin:.15rem 0 .7rem;font-size:17px">Associate Dean of Library and Learning Support</p>
-          <p style="margin:0 0 1rem"><a href="mailto:acardinale@barstow.edu">acardinale@barstow.edu</a></p>
-          <p style="font-size:16px;margin:0">Happy to look at anything with you: a document, a video, an assignment, or a question you are not sure how to phrase.</p>
+          <p style="font-size:16px;margin:0 0 .7rem"><b>ACCESS</b> for questions and support with accommodations for students.</p>
+          <p style="font-size:16px;margin:0"><b>Distance Education</b> for assistance with course design.</p>
         </div>
         <div class="qrbox">
           <svg role="img" aria-label="QR code linking to these workshop slides" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" width="100%" height="100%" class="qr segno"><path class="qrline" stroke="#002269" d="M2 2.5h7m1 0h1m2 0h1m1 0h4m2 0h1m2 0h6m2 0h2m2 0h7m-41 1h1m5 0h1m1 0h4m1 0h1m3 0h2m2 0h9m4 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m4 0h1m1 0h2m2 0h4m1 0h4m3 0h4m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m3 0h4m1 0h2m1 0h1m1 0h7m3 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h3m1 0h1m1 0h2m1 0h6m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h2m2 0h2m1 0h1m2 0h2m1 0h2m2 0h4m2 0h1m2 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-31 1h3m2 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h3m1 0h1m-30 1h1m2 0h1m2 0h3m4 0h2m2 0h5m1 0h1m1 0h1m6 0h3m1 0h2m-38 1h1m3 0h3m2 0h2m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m2 0h3m2 0h2m1 0h1m-41 1h4m2 0h1m1 0h1m3 0h1m1 0h2m1 0h2m1 0h2m8 0h2m2 0h1m1 0h4m-38 1h1m1 0h1m2 0h1m2 0h2m1 0h3m6 0h3m2 0h2m1 0h1m3 0h2m2 0h1m-39 1h1m5 0h1m2 0h1m1 0h2m2 0h3m8 0h2m1 0h3m1 0h2m2 0h1m1 0h1m-37 1h2m2 0h1m3 0h1m3 0h1m3 0h1m2 0h1m1 0h2m1 0h2m1 0h3m6 0h1m-40 1h3m1 0h3m1 0h1m2 0h2m2 0h7m1 0h4m2 0h2m1 0h1m1 0h1m1 0h2m2 0h1m-41 1h2m2 0h2m4 0h1m2 0h3m2 0h2m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h3m-37 1h8m3 0h1m2 0h1m1 0h2m2 0h3m3 0h1m2 0h1m2 0h1m2 0h1m3 0h1m-40 1h1m3 0h2m1 0h5m1 0h1m1 0h3m3 0h2m1 0h1m3 0h2m2 0h1m1 0h2m3 0h2m-41 1h5m1 0h1m2 0h2m1 0h5m2 0h3m1 0h1m2 0h1m2 0h1m2 0h2m2 0h1m2 0h2m-40 1h2m2 0h1m1 0h1m4 0h3m1 0h1m1 0h1m3 0h1m2 0h3m1 0h3m1 0h1m1 0h1m1 0h1m-38 1h1m3 0h3m4 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1m3 0h3m2 0h3m2 0h1m1 0h1m-41 1h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m4 0h1m2 0h1m2 0h1m2 0h1m1 0h1m3 0h3m4 0h2m-41 1h4m1 0h2m1 0h1m7 0h1m1 0h1m1 0h3m1 0h1m3 0h2m1 0h2m1 0h1m4 0h1m-39 1h2m2 0h1m1 0h1m4 0h2m1 0h1m2 0h3m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m4 0h3m-41 1h2m3 0h3m2 0h1m3 0h2m1 0h1m1 0h1m3 0h2m1 0h4m1 0h5m3 0h2m-41 1h2m1 0h3m1 0h1m1 0h3m1 0h1m4 0h2m3 0h3m3 0h1m1 0h1m5 0h1m1 0h1m-39 1h2m3 0h1m7 0h1m1 0h1m8 0h1m4 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-41 1h3m1 0h1m2 0h1m1 0h1m1 0h3m6 0h1m2 0h2m1 0h4m2 0h1m1 0h3m2 0h1m-39 1h1m2 0h3m1 0h1m1 0h1m1 0h2m1 0h1m2 0h3m1 0h1m1 0h1m1 0h1m2 0h2m1 0h2m5 0h2m-39 1h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m1 0h2m3 0h2m2 0h5m2 0h3m1 0h2m1 0h1m-41 1h1m1 0h1m3 0h1m5 0h4m3 0h1m4 0h1m2 0h3m2 0h1m3 0h1m2 0h2m-38 1h3m4 0h3m2 0h1m5 0h3m1 0h2m2 0h2m2 0h1m3 0h1m1 0h2m-41 1h1m3 0h1m1 0h2m5 0h2m1 0h4m1 0h2m1 0h1m2 0h1m2 0h7m1 0h1m1 0h1m-33 1h2m1 0h2m1 0h1m1 0h2m7 0h2m1 0h2m1 0h2m3 0h1m2 0h2m-41 1h7m4 0h5m2 0h1m2 0h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m-40 1h1m5 0h1m3 0h2m2 0h1m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1m3 0h1m3 0h1m1 0h1m-39 1h1m1 0h3m1 0h1m4 0h2m2 0h2m1 0h1m1 0h1m5 0h3m1 0h1m1 0h5m3 0h1m-41 1h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h3m1 0h2m2 0h1m5 0h2m1 0h1m1 0h2m1 0h3m-39 1h1m1 0h3m1 0h1m2 0h1m1 0h1m2 0h2m1 0h3m5 0h1m5 0h1m4 0h3m1 0h1m-41 1h1m5 0h1m8 0h2m4 0h2m1 0h1m4 0h5m1 0h1m3 0h1m-40 1h7m4 0h1m1 0h4m5 0h1m2 0h1m3 0h1m2 0h2m1 0h2m2 0h1"/></svg>
@@ -858,11 +860,14 @@ a,button,input,select,textarea,summary,[tabindex]{scroll-margin-bottom:88px}
     return s;
   }
   function fenceOpen(){
-    var s = '<rect x="8" y="108" width="284" height="72" fill="none" stroke="var(--fence-ink)" stroke-width="2"/>';
-    for (var x = 8; x <= 292; x += 20) {
-      s += '<line x1="'+x+'" y1="108" x2="'+Math.min(x+20,292)+'" y2="180" stroke="var(--fence-ink)" stroke-width="1"/>';
-      s += '<line x1="'+x+'" y1="180" x2="'+Math.min(x+20,292)+'" y2="108" stroke="var(--fence-ink)" stroke-width="1"/>';
-    }
+    // Universal design: the barrier is still there, but everyone can see through it.
+    // Drawn as a glazed panel with a solid frame and a few uprights, so it reads as
+    // a deliberate transparent barrier rather than an unfinished drawing.
+    var s = '<rect x="8" y="108" width="284" height="72" fill="var(--fence-glass)" stroke="var(--fence-ink)" stroke-width="2"/>';
+    for (var x = 66; x < 292; x += 58) s += '<line x1="'+x+'" y1="110" x2="'+x+'" y2="178" stroke="var(--fence-ink)" stroke-width="2"/>';
+    s += '<line x1="8" y1="132" x2="292" y2="132" stroke="var(--fence-glass-line)" stroke-width="3"/>';
+    s += '<line x1="26" y1="112" x2="70" y2="176" stroke="#FFFFFF" stroke-width="5" opacity=".85"/>';
+    s += '<line x1="44" y1="112" x2="88" y2="176" stroke="#FFFFFF" stroke-width="3" opacity=".7"/>';
     return s;
   }
   var PANELS = [
@@ -1024,8 +1029,8 @@ a,button,input,select,textarea,summary,[tabindex]{scroll-margin-bottom:88px}
     var w = document.getElementById("cWhen"), a = document.getElementById("cWhat"), t = document.getElementById("cWhich");
     if (!w) return "";
     var thing = (t.value || "").trim();
-    // The time phrases already read as openers ("by Friday", "this week"), so use them as
-    // written rather than gluing "Before" on the front and producing "Before by Friday".
+    // The time phrases already read as openers ("by tomorrow", "this week"), so use them as
+    // written rather than gluing "Before" on the front and producing "Before by tomorrow".
     var when = w.value.charAt(0).toUpperCase() + w.value.slice(1);
     return when + ", I will " + a.value + " " + (thing ? thing : "\u2026") + ".";
   }
@@ -1036,7 +1041,7 @@ a,button,input,select,textarea,summary,[tabindex]{scroll-margin-bottom:88px}
     el.textContent = s;
     var mail = document.getElementById("mailBtn");
     if (mail) mail.href = "mailto:?subject=" + encodeURIComponent("My one UDL change") +
-      "&body=" + encodeURIComponent(s + "\n\nFrom the Designing for Everyone workshop, Barstow Community College.\nHelp: acardinale@barstow.edu");
+      "&body=" + encodeURIComponent(s + "\n\nFrom the Designing for Everyone workshop, Barstow Community College.\nHelp: ACCESS for accommodations, Distance Education for course design.");
   }
   function wireCommit(){
     ["cWhen","cWhat","cWhich"].forEach(function(id){
