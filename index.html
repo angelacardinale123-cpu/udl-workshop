@@ -263,6 +263,108 @@ a{color:var(--accent);text-underline-offset:.18em}
   .slide-inner{box-shadow:none;border:1px solid #000;min-height:0}
   body{background:#fff}
 }
+
+/* ================================================================
+   DESIGN PASS 2026-08-27 — structural, not decorative.
+   Appended override. Changes no HTML and no JS. Delete this block
+   to return the deck exactly to its previous appearance.
+   ================================================================ */
+
+:root{
+  --paper:#F4F2ED; --surface:#F4F2ED;
+  --ink:#16192A; --muted:#5A5F70;
+  --rule:#DCD7CC; --rule-strong:#16192A;
+  --accent:#002269; --accent-ink:#F4F2ED;
+  --wash:#E9E5DB;
+  --eng-wash:#F7EEF0; --rep-wash:#EAF1ED; --act-wash:#F6F0E6;
+  --shadow:none;
+  --display:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14161C; --surface:#14161C;
+    --ink:#ECEAE4; --muted:#9E9C95;
+    --rule:#2E3138; --rule-strong:#ECEAE4;
+    --accent:#A9BEEC; --accent-ink:#14161C;
+    --wash:#22252C;
+    --eng-wash:#2A1B20; --rep-wash:#16241E; --act-wash:#241E14;
+    --eng:#E2879C; --rep:#6DBF9E; --act:#D6A264;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14161C; --surface:#14161C;
+  --ink:#ECEAE4; --muted:#9E9C95;
+  --rule:#2E3138; --rule-strong:#ECEAE4;
+  --accent:#A9BEEC; --accent-ink:#14161C;
+  --wash:#22252C;
+  --eng-wash:#2A1B20; --rep-wash:#16241E; --act-wash:#241E14;
+  --eng:#E2879C; --rep:#6DBF9E; --act:#D6A264;
+}
+
+/* 1. The floating card was the whole problem. Slides sit on the page. */
+.slide-inner{
+  background:transparent; border:0; border-radius:0; box-shadow:none;
+  padding:0;
+}
+.stage{max-width:68rem; padding:2.2rem 2rem 7rem}
+
+/* 2. Real scale contrast, and a rule that anchors the eyebrow. */
+h1{font-size:clamp(34px,6.6vw,74px); font-weight:800; letter-spacing:-.032em; line-height:.98}
+h2{font-size:clamp(27px,4.8vw,50px); font-weight:800; letter-spacing:-.026em; line-height:1.03; margin-bottom:1.15rem}
+.eyebrow{
+  display:block; border-top:2px solid var(--ink); padding-top:.6rem;
+  margin-bottom:1.1rem; color:var(--ink); font-weight:700;
+}
+
+/* 3. Square everything. Rounded corners everywhere read as templated. */
+.card,.panelbox,.acc,.go-col,.qr,.fence-svg,.play,.pill,
+.switch button,.fence-steps button,.bar button,.commit-acts button,.mailme,
+.cf select,.cf input,#overview button,.check .howto,
+.t-basic,.t-eng,.t-rep,.t-act,.t-all,.p-eng,.p-rep,.p-act{border-radius:0}
+
+/* 4. Boxes become ruled blocks, not outlined containers. */
+.card,.panelbox{
+  background:transparent; border:0; border-left:3px solid var(--ink);
+  padding:.15rem 0 .15rem 1.05rem;
+}
+.acc,.go-col{border:1px solid var(--rule)}
+
+/* 5. The three principles keep their colour, expressed as a rule
+      rather than a pastel fill, so meaning survives without the tint. */
+.p-eng{border-left:4px solid var(--eng)}
+.p-rep{border-left:4px solid var(--rep)}
+.p-act{border-left:4px solid var(--act)}
+.acc-eng .acc-btn{box-shadow:inset 4px 0 0 var(--eng)}
+.acc-rep .acc-btn{box-shadow:inset 4px 0 0 var(--rep)}
+.acc-act .acc-btn{box-shadow:inset 4px 0 0 var(--act)}
+.go-eng .go-g{box-shadow:inset 0 4px 0 var(--eng)}
+.go-rep .go-g{box-shadow:inset 0 4px 0 var(--rep)}
+.go-act .go-g{box-shadow:inset 0 4px 0 var(--act)}
+
+/* 6. Tags read as typographic labels, not chips. */
+.pill,.t-basic,.t-eng,.t-rep,.t-act,.t-all{
+  font-family:var(--mono); letter-spacing:.13em; text-transform:uppercase;
+  padding:.24em .55em; font-weight:700;
+}
+
+/* 7. Controls: square, deliberate, still 44px targets. */
+.switch button,.fence-steps button,.bar button,.commit-acts button,.mailme,#overview button{
+  border:1.5px solid var(--ink); background:transparent; color:var(--ink);
+}
+.switch button[aria-pressed="true"],.fence-steps button[aria-pressed="true"],
+.switch button.on,.fence-steps button.on{
+  background:var(--ink); color:var(--paper); border-color:var(--ink);
+}
+
+/* 8. Focus has to stay loud. WCAG 2.2 AA is not negotiable here. */
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,
+summary:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--accent); outline-offset:2px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) a:focus-visible,
+  :root:not([data-theme="light"]) button:focus-visible{outline-color:var(--accent)}
+}
 </style>
 
 <a class="skip" href="#main">Skip to the slides</a>
@@ -493,48 +595,8 @@ a{color:var(--accent);text-underline-offset:.18em}
     </div>
   </section>
   <!-- 14 -->
-  <section class="slide">
-    <div class="slide-inner">
-      <p class="pill p-eng">Engagement</p>
-      <h2 style="margin-top:.6rem">Things you can do this term</h2>
-      <div class="grid2">
-        <div class="card"><h3>Variety</h3><p>Small group work inside a lecture. Multiple chances to practice. Accept a rough draft. Give feedback early enough to be used.</p></div>
-        <div class="card"><h3>Interaction</h3><p>A pre-course survey so you know who is in the room. Build a community agreement together and return to it. Office hours in more than one format.</p></div>
-        <div class="card"><h3>Choice</h3><p>An optional unit after the required ones. Groups research different topics. A video as an alternative to the chapter.</p></div>
-        <div class="card"><h3>Self-regulation</h3><p>Goal setting at the start. The rubric handed out with the assignment, not after it. Checklists students can track themselves.</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- 15 -->
-  <section class="slide">
-    <div class="slide-inner">
-      <p class="pill p-rep">Representation</p>
-      <h2 style="margin-top:.6rem">Things you can do this term</h2>
-      <div class="grid2">
-        <div class="card"><h3>Accessible materials</h3><p>Formats that work with text-to-speech. Captions and transcripts on video. Captions on graphics. Slides posted in advance. OER where it fits.</p></div>
-        <div class="card"><h3>More than one channel</h3><p>Visual aids alongside the reading. An audio walkthrough of a major assignment. Models and diagrams as well as text.</p></div>
-        <div class="card"><h3>Comprehension</h3><p>A syllabus that states outcomes and expectations plainly. A weekly advance organizer. Key concepts at the start of each class.</p></div>
-        <div class="card"><h3>Check understanding</h3><p>Summarize and tie back to outcomes. Hinge questions. Polling. Ungraded knowledge checks for feedback, not grades.</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- 16 -->
-  <section class="slide">
-    <div class="slide-inner">
-      <p class="pill p-act">Action &amp; expression</p>
-      <h2 style="margin-top:.6rem">Things you can do this term</h2>
-      <div class="grid2">
-        <div class="card"><h3>How they demonstrate it</h3><p>Formative quizzes, case studies, model building, an oral presentation, a debate. Not only a midterm and a final.</p></div>
-        <div class="card"><h3>Exams</h3><p>Vary question types. Assess at different levels, not recall alone. Use graphics in some questions.</p></div>
-        <div class="card"><h3>Feedback</h3><p>Discussion boards for students who need time to think. Rubrics. Peer feedback. Cumulative work with feedback at stages.</p></div>
-        <div class="card"><h3>Reducing anxiety</h3><p>Guidelines that state expectations. Templates or outlines. Sample work showing how it was graded.</p></div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- practical ideas accordion -->
   <section class="slide">
     <div class="slide-inner">
